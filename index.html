@@ -14,7 +14,7 @@
 <body>
 
     <header>
-        <img src="./assets/logo.svg" alt="dev.finance$">
+        <img src="./assets/logo.svg" alt="Logo Dev Finance">
     </header>
 
     <main class="container">
@@ -24,7 +24,9 @@
 
             <div class="card">
                 <h3>
-                    <span>Entradas</span>
+                    <span>
+                        Entradas
+                    </span>
                     <img src="./assets/income.svg" alt="imagem de Entradas">
                 </h3>
                 <p>R$ 5.000,00</p>
@@ -32,7 +34,9 @@
 
             <div class="card">
                 <h3>
-                    <span>Saídas</span>
+                    <span>
+                        Saídas
+                    </span>
                     <img src="./assets/expense.svg" alt="imagem de Saídas">
                 </h3>
                 <p>R$ 2.000,00</p>
@@ -40,7 +44,9 @@
 
             <div class="card total">
                 <h3>
-                    <span>Total</span>
+                    <span>
+                        Total
+                    </span>
                     <img src="./assets/total.svg" alt="imagem de Total">
                 </h3>
                 <p>R$ 3.000,00</p>
@@ -92,9 +98,66 @@
         </section>
     </main>
 
+    <div class="modal-overlay active">
+        <div class="modal">
+            <div id="form">
+                <h2>Nova Transação</h2>
+                <form action="">
+                    <div class="input-group">
+                        <label
+                            class="sr-only"
+                            for="description">Descrição
+                        </label>
+                        <input 
+                            type="text" 
+                            name="description" 
+                            id="description"
+                            placeholder="Descrição"
+                        />
+                    </div>
+
+                    <div class="input-group">
+                        <label
+                            class="sr-only"
+                            for="amount">Valor
+                        </label>
+                        <input 
+                            type="number"
+                            step="0.01"
+                            name="amount" 
+                            id="amount"
+                            placeholder="0,00"
+                        />
+                        <small class="help">Use o sinal - (negativo) para despesas e , (vírgula) para casas decimais</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label
+                            class="sr-only"
+                            for="date">Data
+                        </label>
+                        <input 
+                            type="date" 
+                            name="date" 
+                            id="date"
+                        />
+                    </div>
+
+                    <div class="input-group actions">
+                        <a href="#" class="button cancel">Cancelar</a>
+                        <button>Salvar</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
     <footer class="container">
         <p>dev.finance$</p>
     </footer>
+
+    
 
 </body>
 
