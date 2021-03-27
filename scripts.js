@@ -72,6 +72,6 @@ const DOM = {
     }
 }
 
-DOM.addTransaction(Transactions[0])
-
-Transactions.forEach(function(transaction){})
+Transactions.forEach(function(transaction){
+    DOM.addTransaction(transaction)
+})
