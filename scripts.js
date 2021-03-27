@@ -46,3 +46,30 @@ const Transaction = {
         //entradas -  saídas
     }
 }
+
+const DOM = {
+    transactionsContainer: document.querySelector('#data-table tbody'),
+
+    addTransaction(transaction, index) {
+        const tr = document.createElement('tr')
+        tr.innerHTML = DOM.innerHTMLTransaction(transaction)
+
+        DOM.transactionsContainer.appendChild(tr)
+
+    },
+    innerHTMLTransaction(transaction) { 
+
+        const html = `
+        <td class="description">${transaction.description}</td>
+        <td class="${CSSclass}">${amount}</td>
+        <td class="date">${transaction.date}</td>
+        <td>
+            <img onclick="Transaction.remove(${index})" src="./assets/minus.svg" alt="Remover transação">
+        </td>
+        `
+
+        return html
+    }
+}
+
+DOM.addTransaction(Transactions[0])
