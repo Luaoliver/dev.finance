@@ -57,18 +57,38 @@ const DOM = {
         DOM.transactionsContainer.appendChild(tr)
 
     },
-    innerHTMLTransaction(transaction) { 
+    innerHTMLTransaction(transaction, index) {
+        const CSSclass = transaction.amount > 0 ? "income" : "expense" // data verification
+
+        const amount = Utils.formatCurrency(transaction.amount)
 
         const html = `
         <td class="description">${transaction.description}</td>
-        <td class="amount">${transaction.amount}</td>
+        <td class="${CSSclass}">${amount}</td>
         <td class="date">${transaction.date}</td>
         <td>
-            <img src="./assets/minus.svg" alt="Remover transação">
+            <img onclick="Transaction.remove(${index})" src="./assets/minus.svg" alt="Remover transação">
         </td>
         `
 
         return html
+    }
+}
+
+const Utils = {
+    formatCurrency(value) {
+        const signal = Number(value) < 0 ? "-" : ""
+
+        value = String(value).replace(/\D/g, "") //expressão regular - /\D (define) a g (expressão global), trocar por ""
+
+        value = Number(value) / 100
+
+        value = value.toLocaleString("pt-BR", {
+            style: "currency",
+            currency: "BRL"
+        }) //funcionalidade com dois argumentos, tipo/local e opções como objeto (estilo e tipo)
+
+       return signal + value
     }
 }
 
