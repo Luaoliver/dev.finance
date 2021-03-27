@@ -19,19 +19,19 @@ const Transactions = [
         id: 1,
         description: 'Luz',
         amount: -50000,
-        date: '23/01/2021'
-    }
+        date: '23/01/2021',
+    },
     {
         id: 2,
         description: 'Website',
         amount: 500000,
-        date: '23/01/2021'
-    }
+        date: '23/01/2021',
+    },
     {
         id: 3,
         description: 'Internet',
         amount: -20000,
-        date: '23/01/2021'
+        date: '23/01/2021',
     }
 ]
 
@@ -61,10 +61,10 @@ const DOM = {
 
         const html = `
         <td class="description">${transaction.description}</td>
-        <td class="${CSSclass}">${amount}</td>
+        <td class="amount">${transaction.amount}</td>
         <td class="date">${transaction.date}</td>
         <td>
-            <img onclick="Transaction.remove(${index})" src="./assets/minus.svg" alt="Remover transação">
+            <img src="./assets/minus.svg" alt="Remover transação">
         </td>
         `
 
@@ -73,3 +73,5 @@ const DOM = {
 }
 
 DOM.addTransaction(Transactions[0])
+
+Transactions.forEach(function(transaction){})
